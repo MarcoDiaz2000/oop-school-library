@@ -23,3 +23,4 @@ class TrimmerDecorator < Decorator
     name.length > 10 ? name[0...10] : name
   end
 end
+
