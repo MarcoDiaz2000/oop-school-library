@@ -14,4 +14,3 @@ end
 student1 = Student.new(15, 'Classroom A', parent_permission: false)
 
 puts student1.inspect
-
