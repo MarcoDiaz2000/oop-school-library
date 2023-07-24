@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Create Your Own Enumerable] <a name="about-project"></a>
+# 📖 OOP School Library <a name="about-project"></a>
 
-**[Create Your Own Enumerable]** In this project, we explore the use of modules in Ruby by creating our own implementation of a subset of the Enumerable module. We create a `MyList` class which includes an instance of `MyEnumerable` module. The `MyEnumerable` module implements some of the key methods in Enumerable such as `all?`, `any?` and `filter`.
+**OOP School Library** In this project, we will build an application to help manage the library of OOP University. We will be able to add new students, teachers, and books, as well as keep track of who borrowed which book and when.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,12 +43,11 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Implement `all?` method]**
-- **[Implement `any?` method]**
-- **[Implement `filter` method]**
+- **Add new students or teachers**
+- **Add new books**
+- **Save records of who borrowed a given book and when**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 
@@ -68,11 +67,9 @@ Clone this repository to your desired folder:
 
 Example commands:
 
-```sh
   cd my-folder
-  git clone https://github.com/MarcoDiaz2000/create-your-own-enumerable.git
-```
-  
+  git clone https://github.com/MarcoDiaz2000/oop-school-library.git
+
 ### Install
 
 This project doesn't require any special installation steps. Just make sure Ruby is installed on your machine.
@@ -81,13 +78,13 @@ This project doesn't require any special installation steps. Just make sure Ruby
 
 To run the project, navigate to the directory of the project and run:
 
-```sh
-  ruby test.rb
-```
+  ruby main.rb
 
 ### Run tests
 
-Currently, there are no tests available for this project.
+To run the tests for this project, navigate to the directory of the project and run:
+
+  rspec
 
 ### Deployment
 
@@ -98,12 +95,6 @@ This project doesn't require any special deployment steps.
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> 👤 **berylcl**
-
-- GitHub: [@berylcl](https://github.com/Gakiiberyl)
-- Twitter: [omg_its_beryl](https://twitter.com/omg_its_beryl)
-- LinkedIn: [callme-claudette](https://www.linkedin.com/in/callme-claudette-83a796230/)
 
 👤 **Marco Díaz**
 
@@ -117,8 +108,8 @@ This project doesn't require any special deployment steps.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add more Enumerable methods]**
-- [ ] **[Add test cases]**
+- [ ] **Add unit tests**
+- [ ] **Add data preservation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
