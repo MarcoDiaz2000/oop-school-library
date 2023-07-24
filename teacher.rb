@@ -14,4 +14,3 @@ end
 teacher1 = Teacher.new(15, 'Civic', name: 'Juan')
 
 puts teacher1.inspect
-
