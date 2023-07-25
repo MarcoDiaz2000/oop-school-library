@@ -11,5 +11,4 @@ class Book
     @rentals << rental
     rental.book = self unless rental.book == self
   end
-
 end
