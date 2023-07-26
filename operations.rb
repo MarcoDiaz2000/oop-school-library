@@ -17,7 +17,7 @@ def list_people(people)
       permission = person.parent_permission ? "Has parent's permission" : "Doesn't have parent's permission"
       puts "[Student] Id: #{person.id}, Name: #{person.name}, Age #{person.age}, #{permission}"
     elsif person.is_a?(Teacher)
-      puts "[Teacher] Id: #{person.id}, Name: #{person.name}, Age #{person.age}, "\
+      puts "[Teacher] Id: #{person.id}, Name: #{person.name}, Age #{person.age}, " \
            "Specialization: #{person.specialization}"
     end
   end
