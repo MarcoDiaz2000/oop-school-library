@@ -1,6 +1,8 @@
 require_relative 'person'
 
 class Teacher < Person
+  attr_reader :specialization
+
   def initialize(age, specialization, name: 'Unknown')
     super(age, name: name, parent_permission: true)
     @specialization = specialization
@@ -10,7 +12,3 @@ class Teacher < Person
     true
   end
 end
-
-teacher1 = Teacher.new(15, 'Civic', name: 'Juan')
-
-puts teacher1.inspect

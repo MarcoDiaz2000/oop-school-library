@@ -1,7 +1,7 @@
 require_relative 'nameable'
 
 class Person < Nameable
-  attr_reader :id, :rentals
+  attr_reader :id, :rentals, :parent_permission
   attr_accessor :name, :age
 
   def initialize(age, name: 'Unknown', parent_permission: true)
@@ -31,7 +31,3 @@ class Person < Nameable
     @age >= 18
   end
 end
-
-person1 = Person.new(15, name: 'Pepe')
-
-puts person1.inspect
