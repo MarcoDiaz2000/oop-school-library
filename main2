@@ -17,30 +17,27 @@ def print_menu
   puts '7. Exit'
 end
 
-def menu_options(selection, books, people)
-  case selection
-  when 1
-    list_books(books)
-  when 2
-    list_people(people)
-  when 3
-    create_person(people)
-  when 4
-    create_book(books)
-  when 5
-    create_rental(books, people)
-  when 6
-    list_rentals_for_person_id(people)
+def menu_actions(books, people)
+  {
+    1 => -> { list_books(books) },
+    2 => -> { list_people(people) },
+    3 => -> { create_person(people) },
+    4 => -> { create_book(books) },
+    5 => -> { create_rental(books, people) },
+    6 => -> { list_rentals_for_person_id(people) },
+    7 => lambda {
+      puts 'Goodbye!'
+      exit
+    }
+  }
+end
+
+def menu_option(selection, books, people)
+  if menu_actions(books, people)[selection]
+    menu_actions(books, people)[selection].call
   else
     puts 'Invalid selection. Please choose a valid option.'
   end
-end
-
-def exit_program(selection)
-  return unless selection == 7
-
-  puts 'Goodbye!'
-  exit
 end
 
 def main
@@ -50,8 +47,7 @@ def main
   loop do
     print_menu
     selection = gets.chomp.to_i
-    menu_options(selection, books, people)
-    exit_program(selection)
+    menu_option(selection, books, people)
   end
 end
 
