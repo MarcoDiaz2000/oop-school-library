@@ -115,6 +115,6 @@ def list_rentals_for_person_id(people)
   end
 
   person.rentals.each do |rental|
-    puts "Date: #{rental.date}, #{rental.book.title} rented by #{rental.book.author}"
+    puts "Date: #{rental.date}, #{rental.book.title} rented by #{person.name}"
   end
 end

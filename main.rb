@@ -50,8 +50,8 @@ def main
   loop do
     print_menu
     selection = gets.chomp.to_i
-    menu_options(selection, books, people)
     exit_program(selection)
+    menu_options(selection, books, people)
   end
 end
 
