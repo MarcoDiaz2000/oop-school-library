@@ -134,16 +134,16 @@ class LibraryOperations
     end
   end
 
+  def exit_program
+    puts 'Goodbye!'
+    exit
+  end
+
   def execute_option(option)
     if ACTIONS.key?(option)
       send(ACTIONS[option])
     else
       puts 'Invalid selection. Please choose a valid option.'
     end
-  end
-
-  def exit_program
-    puts 'Goodbye!'
-    exit
   end
 end
