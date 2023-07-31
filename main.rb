@@ -2,10 +2,7 @@ require_relative 'operations'
 require_relative 'menu'
 
 def main
-  people = []
-  books = []
-
-  operations = LibraryOperations.new(books, people)
+  operations = LibraryOperations.new
 
   loop do
     print_menu
