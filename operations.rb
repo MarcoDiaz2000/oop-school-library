@@ -53,6 +53,10 @@ class LibraryOperations
   end
 
   def exit_program
+    @book_operations.save
+    @person_operations.save
+    @rental_operations.save
+    @classroom_operations.save
     puts 'Goodbye!'
     exit
   end

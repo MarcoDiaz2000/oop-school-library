@@ -2,7 +2,23 @@ class RentalOperations
   def initialize(book_operations, person_operations, rentals = [])
     @book_operations = book_operations
     @person_operations = person_operations
-    @rentals = rentals
+
+    if File.exist?('rentals.json')
+      rentals_data = File.read('rentals.json')
+      @rentals = JSON.parse(rentals_data, proc: method(:rental_from_json))
+    else
+      @rentals = rentals
+    end
+  end
+
+  def rental_from_json(object)
+    book = @book_operations.find_by_id(object['book_id'])
+    person = @person_operations.find_by_id(object['person_id'])
+    Rental.new(object['date'], book, person)
+  end
+
+  def save
+    File.write('rentals.json', JSON.dump(@rentals))
   end
 
   def create
