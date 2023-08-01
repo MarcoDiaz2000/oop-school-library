@@ -1,11 +1,20 @@
 class PersonOperations
   def initialize(classroom_operations, people = [])
-    @people = people
+    if File.exist?('people.json')
+      people_data = File.read('people.json')
+      @people = JSON.parse(people_data, create_additions: true)
+    else
+      @people = people
+    end
     @classroom_operations = classroom_operations
   end
 
   def find_by_id(id)
     @people.find { |person| person.id == id }
+  end
+
+  def save
+    File.write('people.json', JSON.dump(@people))
   end
 
   def list

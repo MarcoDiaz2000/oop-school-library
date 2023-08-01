@@ -1,6 +1,11 @@
 class BookOperations
   def initialize(books = [])
-    @books = books
+    if File.exist?('books.json')
+      books_data = File.read('books.json')
+      @books = JSON.parse(books_data, create_additions: true)
+    else
+      @books = books
+    end
   end
 
   def list
@@ -24,5 +29,9 @@ class BookOperations
 
   def find_by_id(id)
     @books.find { |book| book.id == id }
+  end
+
+  def save
+    File.write('books.json', JSON.dump(@books))
   end
 end
